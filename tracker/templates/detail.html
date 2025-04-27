@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+
+{% block title %}
+{{data.desc}}
+{% endblock %}
+
+{% block content %}
+<h1>{{data.desc}}</h1>
+<p>Date: {{data.date}}</p>
+<p>Amount: ₹{{data.amount}}</p>
+<p>Category: {{data.category}}</p>
+<a href="/{{data.id}}/update">
+    <button>Edit</button>
+</a>
+<a href="/{{data.id}}/destroy" onclick="return confirm('Are you sure?')"><button>Delete</button></a>
+{% endblock %}

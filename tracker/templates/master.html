@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a {
+            text-decoration: none;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2a2a2a;
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        #header a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #header a:hover {
+            color: #cdcdcd;
+        }
+
+        #left {
+            font-size: 30px;
+        }
+
+        #right {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            gap: 30px;
+        }
+        #mainDiv {
+            padding: 45px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div id="left">
+            <a href="/">TrackNest</a>
+        </div>
+        <div id="right">
+            <a href="/create">Add New</a>
+            <a href="/search">Search</a>
+            <a href="/report">Get Report</a>
+        </div>
+    </div>
+    <div id="mainDiv">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>

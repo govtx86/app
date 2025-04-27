@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+
+{% block title %}
+Expense Tracker
+{% endblock %}
+
+{% block content %}
+<style>
+    table,
+    td,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: 10px;
+    }
+</style>
+<table style="width: 70vw;">
+    <tr>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Category</th>
+    </tr>
+    {% for x in items %}
+    <tr>
+        <td><a href="/{{x.id}}/" title="Click to get details">{{x.desc}}</a></td>
+        <td>₹{{x.amount}}</td>
+        <td>{{x.date}}</td>
+        <td>{{x.category}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
